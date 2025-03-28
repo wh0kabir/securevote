@@ -1,0 +1,12 @@
+### POST Request to submit a vote
+POST http://localhost:4000/submitVote
+Content-Type: application/json
+
+{
+  "voterId": "1234",
+  "vote": "CandidateA"
+}
+
+### GET Request to fetch the home route
+GET http://localhost:4000/
+
