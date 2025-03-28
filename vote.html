@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureVote | Cast Your Vote</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css"> <!-- Shared styles -->
+  <link rel="stylesheet" href="vote.css"> <!-- Page-specific -->
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container nav-container">
+        <a href="#" class="logo">
+            <span class="logo-icon">🖂</span>
+            <span>Secure<span style="color: var(--blue);">Vote</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/index.html" class="nav-link">Features</a></li>
+          <li><a href="/index.html" class="nav-link">How It Works</a></li>
+            <li><button class="connect-btn" id="connectWallet">
+                <i class="fas fa-wallet"></i> Connect Wallet
+            </button></li>
+        </ul>
+    </div>
+</header>
+
+  <!-- Main Voting Interface -->
+  <main class="voting-interface container">
+    <!-- Election Header -->
+    <section class="election-header glass-panel">
+      <div class="election-title">
+        <h1><i class="fas fa-vote-yea"></i> Student Council Election 2025</h1>
+        <div class="election-timer">
+          <i class="fas fa-clock"></i> 
+          <span id="countdown">48:12:33</span> remaining
+        </div>
+      </div>
+      <div class="election-stats">
+        <div class="stat">
+          <i class="fas fa-users"></i>
+          <span id="votes-cast">1,429</span> votes cast
+        </div>
+        <div class="stat">
+          <i class="fas fa-network-wired"></i>
+          <span>Ethereum Mainnet</span>
+        </div>
+        <div class="stat">
+          <i class="fas fa-bolt"></i>
+          <span id="votes-per-minute">~42</span> votes/minute
+        </div>
+      </div>
+    </section>
+
+    <!-- Candidate Selection -->
+<section class="candidate-selection">
+  <h2>Select Your Candidate</h2>
+  <div class="candidate-grid">
+    <!-- Candidate 1 -->
+    <article class="candidate-card glass-panel" data-candidate-id="1">
+      <div class="candidate-visual">
+        <div class="candidate-avatar" style="background: #4cc9f0;"></div>
+        <div class="candidate-badge">
+          <i class="fas fa-check"></i>
+        </div>
+      </div>
+      <div class="candidate-info">
+        <h3>Alex Chen</h3>
+        <p class="party">Blockchain Reform Party</p>
+        <p class="slogan">"Decentralize student funds"</p>
+      </div>
+      <button class="select-btn">Select</button>
+    </article>
+    
+    <!-- Candidate 2 -->
+    <article class="candidate-card glass-panel" data-candidate-id="2">
+      <div class="candidate-visual">
+        <div class="candidate-avatar" style="background: #f72585;"></div>
+        <div class="candidate-badge">
+          <i class="fas fa-check"></i>
+        </div>
+      </div>
+      <div class="candidate-info">
+        <h3>Sam Wilson</h3>
+        <p class="party">Web3 Progressives</p>
+        <p class="slogan">"Smart contracts for all"</p>
+      </div>
+      <button class="select-btn">Select</button>
+    </article>
+    
+    <!-- Candidate 3 -->
+    <article class="candidate-card glass-panel" data-candidate-id="3">
+      <div class="candidate-visual">
+        <div class="candidate-avatar" style="background: #7209b7;"></div>
+        <div class="candidate-badge">
+          <i class="fas fa-check"></i>
+        </div>
+      </div>
+      <div class="candidate-info">
+        <h3>Jordan Taylor</h3>
+        <p class="party">Digital Rights Alliance</p>
+        <p class="slogan">"Privacy-first policies"</p>
+      </div>
+      <button class="select-btn">Select</button>
+    </article>
+  </div>
+</section>
+
+    <!-- Vote Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+      <div class="modal-content glass-panel">
+        <h2><i class="fas fa-shield-alt"></i> Confirm Your Vote</h2>
+        <div class="vote-summary">
+          <p>You are voting for:</p>
+          <div class="selected-candidate">
+            <div class="avatar-sm" style="background: #4cc9f0;"></div>
+            <h3 id="confirm-candidate-name">Alex Chen</h3>
+          </div>
+        </div>
+        
+        <div class="zkp-consent">
+          <input type="checkbox" id="zkp-checkbox" checked>
+          <label for="zkp-checkbox">
+            Verify anonymously via Zero-Knowledge Proof
+            <i class="fas fa-info-circle" title="Protects your privacy"></i>
+          </label>
+        </div>
+        
+        <div class="gas-estimate">
+          <i class="fas fa-gas-pump"></i>
+          <span>Estimated gas: 0.0021 ETH (~$4.20)</span>
+        </div>
+        
+        <div class="modal-actions">
+          <button id="cancel-vote" class="outline-btn">Cancel</button>
+          <button id="confirm-vote" class="connect-btn">
+            <i class="fas fa-lock"></i> Cast Encrypted Vote
+          </button>
+        </div>
+      </div>
+    </div>
+
+   <!-- Replace the receipt modal with this simplified version: -->
+<div id="receipt-modal" class="modal">
+  <div class="modal-content glass-panel">
+    <div class="receipt-header">
+      <h2><i class="fas fa-receipt"></i> Vote Receipt</h2>
+      <span class="receipt-status verified">
+        <i class="fas fa-check-circle"></i> Verified on Blockchain
+      </span>
+    </div>
+
+    <div class="blockchain-status">
+      <div class="status-step active">
+        <div class="step-icon"><i class="fas fa-lock"></i></div>
+        <span>Vote Encrypted</span>
+      </div>
+      <div class="status-step active">
+        <div class="step-icon"><i class="fas fa-link"></i></div>
+        <span>On Blockchain</span>
+      </div>
+      <div class="status-step active">
+        <div class="step-icon"><i class="fas fa-check-double"></i></div>
+        <span>Confirmed</span>
+      </div>
+    </div>
+    
+    <div class="receipt-details">
+      <div class="detail">
+        <span>Candidate:</span>
+        <span id="receipt-candidate-name">Alex Chen</span>
+      </div>
+      <div class="detail">
+        <span>Timestamp:</span>
+        <span id="vote-timestamp">May 15, 2024 14:32:15 UTC</span>
+      </div>
+    </div>
+    
+    <div class="receipt-actions">
+      <button id="close-receipt" class="connect-btn">
+        <i class="fas fa-check"></i> Done
+      </button>
+    </div>
+  </div>
+</div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

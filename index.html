@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVote | Blockchain Voting System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container nav-container">
+        <a href="#" class="logo">
+            <span class="logo-icon">🖂</span>
+            <span>Secure<span style="color: var(--blue);">Vote</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#features" class="nav-link">Features</a></li>
+            <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+            <li><button class="connect-btn" id="connectWallet">
+                <i class="fas fa-wallet"></i> Connect Wallet
+            </button></li>
+        </ul>
+    </div>
+</header>
+
+  <!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Text Content -->
+        <div class="hero-content">
+          <h1>Blockchain Voting Reimagined</h1>
+          <p>SecureVote brings unprecedented transparency and security to democratic processes through decentralized blockchain technology.</p>
+          <div class="hero-buttons">
+            <a href="/vote.html"><button class="connect-btn">
+              <i class="fas fa-rocket"></i> Get Started
+            </button></a>
+          </div>
+        </div>
+  
+        <div class="hero-image floating">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <!-- Blockchain visualization would go here -->
+                <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(76,201,240,0.2)" stroke-width="2"/>
+                <circle cx="250" cy="250" r="150" fill="none" stroke="rgba(76,201,240,0.2)" stroke-width="2"/>
+                <circle cx="250" cy="250" r="100" fill="none" stroke="rgba(76,201,240,0.2)" stroke-width="2"/>
+                <!-- Nodes -->
+                <circle cx="250" cy="50" r="10" fill="var(--blue)"/>
+                <circle cx="425" cy="125" r="10" fill="var(--blue)"/>
+                <circle cx="425" cy="375" r="10" fill="var(--blue)"/>
+                <circle cx="250" cy="450" r="10" fill="var(--blue)"/>
+                <circle cx="75" cy="375" r="10" fill="var(--blue)"/>
+                <circle cx="75" cy="125" r="10" fill="var(--blue)"/>
+                <!-- Connections -->
+                <line x1="250" y1="50" x2="425" y2="125" stroke="var(--blue)" stroke-width="2" stroke-opacity="0.5"/>
+                <line x1="425" y1="125" x2="425" y2="375" stroke="var(--blue)" stroke-width="2" stroke-opacity="0.5"/>
+                <line x1="425" y1="375" x2="250" y2="450" stroke="var(--blue)" stroke-width="2" stroke-opacity="0.5"/>
+                <line x1="250" y1="450" x2="75" y2="375" stroke="var(--blue)" stroke-width="2" stroke-opacity="0.5"/>
+                <line x1="75" y1="375" x2="75" y2="125" stroke="var(--blue)" stroke-width="2" stroke-opacity="0.5"/>
+                <line x1="75" y1="125" x2="250" y2="50" stroke="var(--blue)" stroke-width="2" stroke-opacity="0.5"/>
+            </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose SecureVote?</h2>
+                <p>Our platform leverages cutting-edge blockchain technology to solve the fundamental challenges of traditional voting systems</p>
+            </div>
+            <div class="features-grid">
+                <div class="glass-panel feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Military-Grade Security</h3>
+                    <p>Each vote is cryptographically secured using advanced blockchain protocols, making tampering virtually impossible.</p>
+                </div>
+                <div class="glass-panel feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Complete Transparency</h3>
+                    <p>Every vote is recorded on a public ledger while maintaining voter anonymity through zero-knowledge proofs.</p>
+                </div>
+                <div class="glass-panel feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Accessibility</h3>
+                    <p>Vote from anywhere in the world with just an internet connection and a compatible wallet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-section">
+        <div class="container">
+          <h2 class="section-header">How It Works Under the Hood</h2>
+          <div class="tech-grid">
+            <!-- Card 1 -->
+            <div class="tech-card glass-panel">
+              <div class="tech-icon">
+                <i class="fas fa-user-secret"></i>
+              </div>
+              <h3>Zero-Knowledge Proofs</h3>
+              <div class="tech-details">
+                <p>Your identity is verified without exposing personal data using zk-SNARKs.</p>
+                <div class="tech-mock-data">
+                    <div class="progress-track">
+                      <div class="progress-fill" data-value="85">
+                        <div class="progress-glow"></div>
+                      </div>
+                    </div>
+                    <div class="progress-meta">
+                      <span class="progress-percent">85%</span>
+                      <span class="progress-caption">Faster than RSA</span>
+                    </div>
+                  </div>
+              </div>
+              <button class="expand-btn" onclick="toggleTechDetails(this)">
+                <span class="btn-text">Show Tech</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <!-- Card 2 -->
+            <div class="tech-card glass-panel">
+              <div class="tech-icon">
+                <i class="fas fa-link"></i>
+              </div>
+              <h3>Immutable Storage</h3>
+              <div class="tech-details">
+                <p>Votes are written to Ethereum's blockchain in 12-second blocks.</p>
+                <div class="tech-mock-data">
+                    <div class="progress-track">
+                      <div class="progress-fill" data-value="100">
+                        <div class="progress-glow"></div>
+                      </div>
+                    </div>
+                    <div class="progress-meta">
+                      <span class="progress-percent">100%</span>
+                      <span class="progress-caption">Tamper-Proof</span>
+                    </div>
+                  </div>
+              </div>
+              <button class="expand-btn" onclick="toggleTechDetails(this)">
+                <span class="btn-text">Show Tech</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Participating in the democratic process has never been easier or more secure</p>
+            </div>
+            <div class="glass-panel steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Connect Your Wallet</h3>
+                        <p>Link your preferred Web3 wallet (MetaMask, WalletConnect, etc.) to verify your identity and eligibility to vote.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Verify Your Identity</h3>
+                        <p>Complete our privacy-preserving KYC process to ensure one person, one vote - without compromising your personal data.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Cast Your Vote</h3>
+                        <p>Select your preferred option and submit your vote through our intuitive, accessible interface.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Verify on Blockchain</h3>
+                        <p>Your vote is recorded as an anonymous transaction on the blockchain, where it can be publicly verified.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="metrics">
+        <div class="container">
+          <h2 class="section-header">Live Network Stats</h2>
+          <div class="metrics-grid glass-panel">
+            
+            <!-- Metric 1 - Animated Counter -->
+            <div class="metric">
+              <div class="metric-icon">
+                <i class="fas fa-vote-yea"></i>
+              </div>
+              <div class="metric-value" data-target="1242">1242</div>
+              <div class="metric-label">Votes Cast</div>
+              <div class="metric-subtext">+12% last hour</div>
+            </div>
+            
+            <!-- Metric 2 - Animated Gauge -->
+            <div class="metric">
+              <div class="metric-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="metric-gauge">
+                <div class="gauge-fill" data-percent="99.9"></div>
+              </div>
+              <div class="metric-value">99.9%</div>
+              <div class="metric-label">Uptime</div>
+            </div>
+            
+            <!-- Metric 3 - Node Visualization -->
+            <div class="metric">
+              <div class="metric-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <div class="nodes-visual">
+                <div class="node active"></div>
+                <div class="node active"></div>
+                <div class="node active"></div>
+                <div class="node"></div>
+                <div class="node"></div>
+              </div>
+              <div class="metric-value">3/5</div>
+              <div class="metric-label">Nodes Online</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="glass-panel cta-panel">
+                <h2>Ready to Revolutionize Voting?</h2>
+                <p>Join governments and organizations worldwide who are adopting SecureVote for their most critical elections and decision-making processes.</p>
+                <div class="cta-buttons">
+                    <a href="/vote.html"><button class="connect-btn">
+                      <i class="fas fa-vote-yea"></i> Start Voting Now
+                    </button></a>
+                  </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="faq">
+        <div class="container">
+          <h2 class="section-header">FAQs</h2>
+          <div class="faq-grid">
+            <details class="faq-item glass-panel">
+              <summary>How does SecureVote prevent duplicate voting?</summary>
+              <p>Each voter's wallet address is cryptographically signed and recorded on-chain. Our smart contracts enforce <strong>one vote per verified identity</strong>, detected in real-time.</p>
+            </details>
+
+            <details class="faq-item glass-panel">
+              <summary>Can votes be traced back to me?</summary>
+              <p>No. We use <strong>zero-knowledge proofs (zk-SNARKs)</strong> to validate eligibility without exposing personal data. Your wallet address is never linked to your vote choice.</p>
+            </details>
+
+            <details class="faq-item glass-panel">
+                <summary>What happens if I lose my wallet credentials?</summary>
+                <p>During KYC, we provide a <strong>recovery seed phrase</strong> encrypted with your government ID. This allows secure vote retrieval without compromising anonymity.</p>
+              </details>
+              
+              <details class="faq-item glass-panel">
+                <summary>How are election results verified?</summary>
+                <p>Results are computed on-chain via smart contracts and can be <strong>independently audited</strong> using our open-source verifier tool. Every step is transparent.</p>
+              </details>
+
+              <details class="faq-item glass-panel">
+                <summary>Which blockchains do you support?</summary>
+                <p>Currently Ethereum and Polygon for low fees. <strong>Coming soon:</strong> Solana, Avalanche, and our own L2 chain optimized for voting.</p>
+              </details>
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-brand">
+          <div class="footer-logo">Secure<span>Vote</span></div>
+          <p class="footer-copyright">&copy; 2023 SecureVote. Blockchain Voting Prototype.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
